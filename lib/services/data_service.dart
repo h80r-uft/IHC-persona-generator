@@ -3,9 +3,9 @@ import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:dio/dio.dart';
 
 // Models
+import 'package:persona_generator/models/person_data.dart';
 import 'package:persona_generator/models/person_data/basic_info.dart';
 import 'package:persona_generator/models/person_data/employment_info.dart';
-import 'package:persona_generator/models/person_data/person_data.dart';
 import 'package:persona_generator/models/person_data/personal_info.dart';
 
 class DataService {

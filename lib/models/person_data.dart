@@ -1,6 +1,6 @@
-import 'basic_info.dart';
-import 'employment_info.dart';
-import 'personal_info.dart';
+import 'person_data/basic_info.dart';
+import 'person_data/employment_info.dart';
+import 'person_data/personal_info.dart';
 
 class PersonData {
   PersonData({
