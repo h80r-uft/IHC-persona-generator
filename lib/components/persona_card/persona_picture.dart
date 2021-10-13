@@ -1,4 +1,5 @@
 // Packages
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 // Utils
@@ -11,7 +12,7 @@ class PersonaPicture extends StatelessWidget {
     required this.color,
   }) : super(key: key);
 
-  final String image;
+  final Uint8List image;
   final Color color;
 
   @override
@@ -24,14 +25,10 @@ class PersonaPicture extends StatelessWidget {
         shape: BoxShape.circle,
         color: ColorUtils.lightChange(color, percentage: 0.4).withOpacity(0.5),
         border: Border.all(
-            color: ColorUtils.lightChange(
-          color,
-          percentage: 0.6,
-        )),
+          color: ColorUtils.lightChange(color, percentage: 0.6),
+        ),
       ),
-      child: CircleAvatar(
-        foregroundImage: NetworkImage(image),
-      ),
+      child: CircleAvatar(foregroundImage: MemoryImage(image)),
     );
   }
 }
