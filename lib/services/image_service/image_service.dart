@@ -1,4 +1,7 @@
+// Libraries
 import 'dart:typed_data';
+
+// Packages
 import 'package:dio/dio.dart';
 
 class ImageService {
