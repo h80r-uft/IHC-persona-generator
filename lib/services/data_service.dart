@@ -3,10 +3,7 @@ import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:dio/dio.dart';
 
 // Models
-import 'package:persona_generator/models/person_data.dart';
-import 'package:persona_generator/models/person_data/basic_info.dart';
-import 'package:persona_generator/models/person_data/employment_info.dart';
-import 'package:persona_generator/models/person_data/personal_info.dart';
+import 'package:persona_generator/models/persona_data.dart';
 
 class DataService {
   final _dio = Dio();
@@ -41,7 +38,7 @@ class DataService {
         .string;
   }
 
-  Future<PersonData> getPersonData() async {
+  Future<PersonaData> getPersonData() async {
     final request = await _dio.get<String>(
       'https://www.fakepersongenerator.com/Index/generate',
     );
@@ -57,24 +54,18 @@ class DataService {
     final familySize = int.parse(
         _findEditable(dataFrame, field: 'Family Members').split(' ').first);
 
-    return PersonData(
-      basicInfo: BasicInfo(
-        civilStatus: _findEditable(dataFrame, field: 'Civil Status'),
-        educationalBackground: education,
-        name: dataFrame.find('p', class_: 'text-center name')!.string,
-        age: _birthdayToAge(birth!.string),
-      ),
-      employmentInfo: EmploymentInfo(
-        employmentStatus: _findEditable(dataFrame, field: 'Employment Status'),
-        jobTitle: _findEditable(dataFrame, field: 'Occupation'),
-        industry: _findEditable(dataFrame, field: 'Industry'),
-      ),
-      personalInfo: PersonalInfo(
-        familyMembers: familySize,
-        signature: _findStatic(dataFrame, field: 'Online Signature'),
-        biography: _findStatic(dataFrame, field: 'Online Biography'),
-        interest: _findStatic(dataFrame, field: 'Interest'),
-      ),
+    return PersonaData(
+      civilStatus: _findEditable(dataFrame, field: 'Civil Status'),
+      educationalBackground: education,
+      name: dataFrame.find('p', class_: 'text-center name')!.string,
+      age: _birthdayToAge(birth!.string),
+      employmentStatus: _findEditable(dataFrame, field: 'Employment Status'),
+      jobTitle: _findEditable(dataFrame, field: 'Occupation'),
+      industry: _findEditable(dataFrame, field: 'Industry'),
+      familyMembers: familySize,
+      signature: _findStatic(dataFrame, field: 'Online Signature'),
+      biography: _findStatic(dataFrame, field: 'Online Biography'),
+      interest: _findStatic(dataFrame, field: 'Interest'),
     );
   }
 }
