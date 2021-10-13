@@ -16,7 +16,7 @@ class PageData {
   final Uint8List? personaImage;
   final String? personaDescription;
 
-  final bool? isLoading;
+  final bool isLoading;
 
   PageData.initial()
       : personaData = null,

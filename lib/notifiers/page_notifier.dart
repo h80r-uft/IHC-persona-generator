@@ -10,7 +10,9 @@ import 'package:persona_generator/services/image_service/image_service.dart';
 
 class PageNotifier extends StateNotifier<PageData> {
   PageNotifier(this._dataService, this._imageService)
-      : super(PageData.initial());
+      : super(PageData.initial()) {
+    generatePersona();
+  }
 
   final DataService _dataService;
   final ImageService _imageService;
