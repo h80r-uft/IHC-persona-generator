@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   beautiful_soup_dart: ^0.2.0
+  circular_menu: ^1.2.3
   dio: ^4.0.0
   flutter:
     sdk: flutter
