@@ -14,6 +14,7 @@ class PersonaData {
     required this.signature,
     required this.biography,
     required this.interest,
+    required this.color,
   });
 
   // Basic Info
@@ -32,4 +33,5 @@ class PersonaData {
   final String signature;
   final String biography;
   final String interest;
+  final String color;
 }
