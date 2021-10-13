@@ -25,7 +25,11 @@ class PersonaCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
                 Text('Press the button below!'),
-                PersonaAttribute(),
+                PersonaAttribute(
+                  icon: Icons.family_restroom,
+                  text: '3 filhos',
+                  color: Colors.blue,
+                ),
               ],
             ),
             Container(
