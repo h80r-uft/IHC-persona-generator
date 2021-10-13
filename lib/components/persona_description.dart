@@ -17,8 +17,8 @@ class PersonaDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 320,
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      width: 335,
+      padding: const EdgeInsets.fromLTRB(20.0, 0, 50.0, 0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
