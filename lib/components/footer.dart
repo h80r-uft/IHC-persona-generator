@@ -1,7 +1,8 @@
 // Packages
-// Packages
 import 'package:flutter/material.dart';
-import 'package:url_launcher/link.dart';
+
+// Components
+import 'package:persona_generator/components/linked_text.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -23,28 +24,18 @@ class Footer extends StatelessWidget {
         opacity: 0.3,
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text("This project wouldn't be possible without "),
-            Link(
-              uri: Uri.parse('https://www.fakepersongenerator.com/'),
-              builder: (_, followLink) {
-                return TextButton(
-                  onPressed: followLink,
-                  child: const Text('FakePersonGenerator'),
-                );
-              },
+          children: const [
+            Text("This project wouldn't be possible without "),
+            LinkedText(
+              link: 'https://www.fakepersongenerator.com/',
+              text: 'FakePersonGenerator',
             ),
-            const Text(" (used to generate a persona's data) and "),
-            Link(
-              uri: Uri.parse('https://thispersondoesnotexist.com/'),
-              builder: (_, followLink) {
-                return TextButton(
-                  onPressed: followLink,
-                  child: const Text('ThisPersonDoesNotExist'),
-                );
-              },
+            Text(" (used to generate a persona's data) and "),
+            LinkedText(
+              link: 'https://thispersondoesnotexist.com/',
+              text: 'ThisPersonDoesNotExist',
             ),
-            const Text(" (persona's picture provider)"),
+            Text(" (persona's picture provider)"),
           ],
         ),
       ),
