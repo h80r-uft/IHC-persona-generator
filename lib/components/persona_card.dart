@@ -43,7 +43,12 @@ class PersonaCard extends StatelessWidget {
                 ),
               ),
             ),
-            const PersonaDescription(),
+            const PersonaDescription(
+              name: 'Jack L Dardar',
+              description:
+                  'Sed accumsan ut elit suscipit eleifend. Suspendisse eget euismod arcu. Cras auctor sollicitudin tellus, id egestas dolor elementum sed. Donec imperdiet quis mauris eu laoreet. Sed urna velit, imperdiet sit amet erat non, molestie vehicula mauris. Ut eu auctor quam. In iaculis eros nec faucibus cursus. Duis feugiat posuere posuere. Ut elementum id felis hendrerit tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et bibendum enim. Cras varius ante sit amet arcu efficitur pharetra. Curabitur lobortis, lorem ac dapibus aliquam, eros sem tempus magna, hendrerit hendrerit nisi lectus in est.',
+              color: Colors.blue,
+            ),
           ],
         ),
       ),
