@@ -1,3 +1,6 @@
+/// Information about a Persona
+///
+/// This class models the information a persona have.
 class PersonaData {
   PersonaData({
     required this.civilStatus,

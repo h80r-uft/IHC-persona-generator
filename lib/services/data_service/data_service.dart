@@ -5,15 +5,23 @@ import 'package:dio/dio.dart';
 // Models
 import 'package:persona_generator/models/persona_data.dart';
 
+/// Persona Data Generation Service.
+///
+/// This service is responsible for generating persona data with realistic
+/// information provided by `www.fakepersongenerator.com`.
 class DataService {
   final _dio = Dio();
 
+  /// Converts the birthday string generated to a valid age.
   int _birthdayToAge(String birthday) {
     return int.parse(
       birthday.substring(birthday.indexOf('(') + 1).split(' ').first,
     );
   }
 
+  /// Get valid information from editable fields.
+  ///
+  /// Search the desired [field] and return its corresponding value.
   String _findEditable(
     Bs4Element dataFrame, {
     required String field,
@@ -26,6 +34,9 @@ class DataService {
         .attributes['value']!;
   }
 
+  /// Get valid information from static fields.
+  ///
+  /// Search the desired [field] and return its corresponding value.
   String _findStatic(
     Bs4Element dataFrame, {
     required String field,
@@ -38,7 +49,11 @@ class DataService {
         .string;
   }
 
-  Future<PersonaData> getPersonData() async {
+  /// Generate [PersonaData]
+  ///
+  /// Request data from `https://www.fakepersongenerator.com/` and format into a
+  /// [PersonaData] instance using support functions.
+  Future<PersonaData> getPersonaData() async {
     final request = await _dio.get<String>(
       'https://www.fakepersongenerator.com/Index/generate',
     );

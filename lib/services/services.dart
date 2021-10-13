@@ -1,3 +1,5 @@
+/// Service Singletons are created using [Provider].
+
 // Packages
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
