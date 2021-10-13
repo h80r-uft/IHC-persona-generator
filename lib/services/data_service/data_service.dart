@@ -81,6 +81,7 @@ class DataService {
       signature: _findStatic(dataFrame, field: 'Online Signature'),
       biography: _findStatic(dataFrame, field: 'Online Biography'),
       interest: _findStatic(dataFrame, field: 'Interest'),
+      color: _findEditable(dataFrame, field: 'Favorite Color'),
     );
   }
 }
