@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Components
 import 'package:persona_generator/components/persona_card.dart';
+import 'package:persona_generator/components/footer.dart';
 
 class PersonaPage extends ConsumerWidget {
   const PersonaPage({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class PersonaPage extends ConsumerWidget {
       body: const Center(
         child: PersonaCard(),
       ),
+      bottomSheet: const Footer(),
       floatingActionButton: CircularMenu(
         alignment: Alignment.bottomRight,
         items: [

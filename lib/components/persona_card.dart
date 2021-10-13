@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // Components
-import 'package:persona_generator/components/persona_attribute.dart';
-import 'package:persona_generator/components/persona_description.dart';
-import 'package:persona_generator/components/persona_picture.dart';
-import 'package:persona_generator/components/persona_stats.dart';
+import 'package:persona_generator/components/persona_card/persona_attribute.dart';
+import 'package:persona_generator/components/persona_card/persona_description.dart';
+import 'package:persona_generator/components/persona_card/persona_picture.dart';
+import 'package:persona_generator/components/persona_card/persona_stats.dart';
 
 class PersonaCard extends StatelessWidget {
   const PersonaCard({

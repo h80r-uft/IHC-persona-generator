@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Components
-import 'package:persona_generator/components/persona_attribute.dart';
+import 'package:persona_generator/components/persona_card/persona_attribute.dart';
 
 class PersonaStats extends StatelessWidget {
   const PersonaStats({
