@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // Components
 import 'package:persona_generator/components/persona_attribute.dart';
 import 'package:persona_generator/components/persona_description.dart';
+import 'package:persona_generator/components/persona_picture.dart';
 
 class PersonaCard extends StatelessWidget {
   const PersonaCard({
@@ -32,20 +33,9 @@ class PersonaCard extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              height: 200.0,
-              width: 200.0,
-              padding: const EdgeInsets.all(10.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black.withOpacity(0.5),
-                border: Border.all(color: Colors.black),
-              ),
-              child: const CircleAvatar(
-                foregroundImage: NetworkImage(
-                  'https://www.w3schools.com/howto/img_avatar.png',
-                ),
-              ),
+            const PersonaPicture(
+              image: 'https://www.w3schools.com/howto/img_avatar.png',
+              color: Colors.blue,
             ),
             const PersonaDescription(
               name: 'Jack L Dardar',
