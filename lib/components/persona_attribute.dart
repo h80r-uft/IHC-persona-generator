@@ -27,13 +27,15 @@ class PersonaAttribute extends StatelessWidget {
             child: Text(text),
           ),
           Container(
+            height: 24.0,
+            width: 24.0,
             margin: const EdgeInsets.all(3.0),
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: ColorUtils.lightChange(color, percentage: 0.25),
             ),
-            child: Icon(icon),
+            child: Icon(icon, size: 20.0),
           ),
         ],
       ),
