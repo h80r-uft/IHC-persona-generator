@@ -70,7 +70,6 @@ class DataService {
         _findEditable(dataFrame, field: 'Family Members').split(' ').first);
 
     return PersonaData(
-      civilStatus: _findEditable(dataFrame, field: 'Civil Status'),
       educationalBackground: education,
       name: dataFrame.find('p', class_: 'text-center name')!.string,
       age: _birthdayToAge(birth!.string),
@@ -78,7 +77,6 @@ class DataService {
       jobTitle: _findEditable(dataFrame, field: 'Occupation'),
       industry: _findEditable(dataFrame, field: 'Industry'),
       familyMembers: familySize,
-      signature: _findStatic(dataFrame, field: 'Online Signature'),
       biography: _findStatic(dataFrame, field: 'Online Biography'),
       interest: _findStatic(dataFrame, field: 'Interest'),
       color: _findEditable(dataFrame, field: 'Favorite Color'),

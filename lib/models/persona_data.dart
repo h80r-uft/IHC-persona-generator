@@ -3,7 +3,6 @@
 /// This class models the information a persona have.
 class PersonaData {
   PersonaData({
-    required this.civilStatus,
     required this.educationalBackground,
     required this.name,
     required this.age,
@@ -11,14 +10,12 @@ class PersonaData {
     required this.jobTitle,
     required this.industry,
     required this.familyMembers,
-    required this.signature,
     required this.biography,
     required this.interest,
     required this.color,
   });
 
   // Basic Info
-  final String civilStatus;
   final String educationalBackground;
   final String name;
   final int age;
@@ -30,7 +27,6 @@ class PersonaData {
 
   // Personal Info
   final int familyMembers;
-  final String signature;
   final String biography;
   final String interest;
   final String color;
