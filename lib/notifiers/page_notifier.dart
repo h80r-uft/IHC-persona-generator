@@ -1,6 +1,7 @@
 // Packages
 import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:translator/translator.dart';
 
 // Models
 import 'package:persona_generator/models/page_data.dart';
@@ -25,12 +26,12 @@ class PageNotifier extends StateNotifier<PageData> {
       personaImage: await _imageService.getPersonaImage(),
     );
     state = state.copyWith(
-      personaDescription: _generateDescription(),
+      personaDescription: await _generateDescription(),
       isLoading: false,
     );
   }
 
-  String _generateDescription() {
+  Future<String> _generateDescription() async {
     const templates = [
       'Is a %ES% as a %JT% in the industry of %ID%. Likes %IT% and describes themselves as %BI%',
       '%BI% A %ES% in the industry of %ID%. Is a %JT% interested in %IT%',
@@ -53,6 +54,6 @@ class PageNotifier extends StateNotifier<PageData> {
       description = description.replaceFirst(key, dataMap[key] ?? 'ERROR');
     }
 
-    return description;
+    return (await description.translate(to: 'pt')).text;
   }
 }
