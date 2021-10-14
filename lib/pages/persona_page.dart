@@ -30,6 +30,7 @@ class PersonaPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
     final pageData = watch(_pageProvider);
+    final pageNotifier = watch(_pageProvider.notifier);
 
     return pageData.isLoading
         ? const Center(
@@ -51,7 +52,7 @@ class PersonaPage extends ConsumerWidget {
               alignment: Alignment.bottomRight,
               items: [
                 CircularMenuItem(
-                  onTap: () {},
+                  onTap: pageNotifier.generatePersona,
                   icon: Icons.refresh,
                 ),
                 CircularMenuItem(
