@@ -59,7 +59,7 @@ class PersonaPage extends ConsumerWidget {
                   icon: Icons.refresh,
                 ),
                 CircularMenuItem(
-                  onTap: pageNotifier.generatePersona,
+                  onTap: pageNotifier.refreshImage,
                   icon: Icons.image,
                 ),
                 CircularMenuItem(
