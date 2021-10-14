@@ -1,6 +1,7 @@
 // Packages
 import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:dio/dio.dart';
+import 'package:translator/translator.dart';
 
 // Models
 import 'package:persona_generator/models/persona_data.dart';
@@ -70,7 +71,7 @@ class DataService {
         _findEditable(dataFrame, field: 'Family Members').split(' ').first);
 
     return PersonaData(
-      educationalBackground: education,
+      educationalBackground: (await education.translate(to: 'pt')).text,
       name: dataFrame.find('p', class_: 'text-center name')!.string,
       age: _birthdayToAge(birth!.string),
       employmentStatus: _findEditable(dataFrame, field: 'Employment Status'),
