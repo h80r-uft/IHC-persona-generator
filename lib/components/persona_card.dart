@@ -40,14 +40,19 @@ class PersonaCard extends StatelessWidget {
             PersonaStats(
               children: [
                 PersonaAttribute(
-                  icon: Icons.family_restroom,
-                  text: '${personaData.familyMembers} filhos',
-                  color: Colors.blue,
-                ),
-                PersonaAttribute(
                   icon: Icons.calendar_today,
                   text: '${personaData.age} anos',
                   color: Colors.red,
+                ),
+                PersonaAttribute(
+                  icon: Icons.school,
+                  text: personaData.educationalBackground,
+                  color: Colors.deepPurple,
+                ),
+                PersonaAttribute(
+                  icon: Icons.family_restroom,
+                  text: '${personaData.familyMembers} parentes',
+                  color: Colors.blue,
                 ),
               ],
             ),
