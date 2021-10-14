@@ -22,6 +22,7 @@ class PageNotifier extends StateNotifier<PageData> {
     state = state.copyWith(
       personaData: await _dataService.getPersonaData(),
       personaImage: await _imageService.getPersonaImage(),
+      personaDescription: '',
       isLoading: false,
     );
   }
