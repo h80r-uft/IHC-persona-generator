@@ -16,6 +16,7 @@ import 'package:persona_generator/services/services.dart';
 
 // Notifiers
 import 'package:persona_generator/notifiers/page_notifier.dart';
+import 'package:screenshot/screenshot.dart';
 
 // Providers
 final _pageProvider = StateNotifierProvider<PageNotifier, PageData>((ref) {
@@ -32,6 +33,7 @@ class PersonaPage extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final pageData = watch(_pageProvider);
     final pageNotifier = watch(_pageProvider.notifier);
+    final screenshotController = ScreenshotController();
 
     return pageData.isLoading
         ? const Center(
@@ -42,10 +44,13 @@ class PersonaPage extends ConsumerWidget {
               title: const Text('Persona Generator'),
             ),
             body: Center(
-              child: PersonaCard(
-                personaData: pageData.personaData!,
-                personaImage: pageData.personaImage!,
-                personaDescription: pageData.personaDescription!,
+              child: Screenshot(
+                controller: screenshotController,
+                child: PersonaCard(
+                  personaData: pageData.personaData!,
+                  personaImage: pageData.personaImage!,
+                  personaDescription: pageData.personaDescription!,
+                ),
               ),
             ),
             bottomSheet: const Footer(),
@@ -63,7 +68,10 @@ class PersonaPage extends ConsumerWidget {
                   icon: Icons.image,
                 ),
                 CircularMenuItem(
-                  onTap: () {},
+                  onTap: () => screenshotController.captureAndSave(
+                    './',
+                    fileName: 'persona.png',
+                  ),
                   icon: Icons.save,
                 ),
               ],
