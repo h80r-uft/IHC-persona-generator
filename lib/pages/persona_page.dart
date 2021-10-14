@@ -1,4 +1,5 @@
 // Packages
+import 'dart:math';
 import 'package:circular_menu/circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -50,10 +51,16 @@ class PersonaPage extends ConsumerWidget {
             bottomSheet: const Footer(),
             floatingActionButton: CircularMenu(
               alignment: Alignment.bottomRight,
+              startingAngleInRadian: pi,
+              endingAngleInRadian: 3 * pi / 2,
               items: [
                 CircularMenuItem(
                   onTap: pageNotifier.generatePersona,
                   icon: Icons.refresh,
+                ),
+                CircularMenuItem(
+                  onTap: pageNotifier.refreshImage,
+                  icon: Icons.image,
                 ),
                 CircularMenuItem(
                   onTap: () {},

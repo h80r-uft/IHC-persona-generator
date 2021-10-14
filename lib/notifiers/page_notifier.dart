@@ -31,6 +31,10 @@ class PageNotifier extends StateNotifier<PageData> {
     );
   }
 
+  void refreshImage() async {
+    state = state.copyWith(personaImage: await _imageService.getPersonaImage());
+  }
+
   Future<String> _generateDescription() async {
     const templates = [
       'Is a %ES% as a %JT% in the industry of %ID%. Likes %IT% and describes themselves as %BI%',
